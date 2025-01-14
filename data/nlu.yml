@@ -1,0 +1,225 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - buenas noches
+    - qué tal
+    - cómo estás
+    - hola a todos
+    - hola amigo
+    - hola, ¿qué tal?
+    - hola, ¿cómo estás?
+    - buenos días a todos
+    - buenas tardes a todos
+    - buenas noches a todos
+    - /start
+
+- intent: goodbye
+  examples: |
+    - adiós
+    - hasta luego
+    - nos vemos
+    - hasta la próxima
+    - chao
+    - me voy
+    - que tengas un buen día
+    - hasta pronto
+    - adiós, cuídate
+    - nos vemos luego
+
+- intent: bot_challenge
+  examples: |
+    - ¿eres un bot?
+    - ¿eres un humano?
+    - ¿estoy hablando con un bot?
+    - ¿estoy hablando con un humano?
+
+- intent: ask_capabilities
+  examples: |
+    - ¿Qué puedes hacer?
+    - ¿Cuáles son tus habilidades?
+    - ¿Qué sabes hacer?
+    - ¿Qué funciones tienes?
+    - ¿Qué tareas puedes realizar?
+    - ¿Qué puedes realizar?
+    - ¿Qué puedes hacer por mí?
+    - ¿Qué puedes hacer para ayudarme?
+    - ¿Qué puedes hacer para asistirme?
+    - ¿Qué puedes hacer para apoyarme?
+    - ¿Qué puedes hacer para colaborar conmigo?
+    - ¿Qué puedes hacer para cooperar conmigo?
+    - ¿Qué puedes hacer para trabajar conmigo
+
+- intent: add_event
+  examples: |
+    - Añadir evento
+    - Añadir evento al calendario
+    - Añadir nuevo evento
+    - Añadir evento a mi calendario
+    - Añadir un nuevo evento
+    - Crear evento
+    - Crear nuevo evento
+    - Crear evento en el calendario
+    - Programar evento
+    - Programar nuevo evento
+    - Programar evento en el calendario
+
+- intent: get_events
+  examples: |
+    - Obtener eventos
+    - Obtener próximos eventos
+    - Obtener eventos del calendario
+    - ¿Cuáles son mis eventos?
+    - ¿Cuáles son mis próximos eventos?
+    - ¿Qué eventos tengo?
+    - ¿Qué eventos vienen?
+    - Mostrar mis eventos
+    - Mostrar próximos eventos
+    - Mostrar eventos en el calendario
+    - Listar mis eventos
+    - Listar próximos eventos
+    - Listar eventos en el calendario
+    - Mostrar mis eventos
+    - Mostrar próximos eventos
+    - Mostrar eventos en el calendario
+
+- intent: inform_event
+  examples: |
+    - ir a nadar
+    - jugar juegos
+    - ir a caminar
+    - asistir a una reunión
+    - unirse a una conferencia
+    - almorzar
+    - visitar al doctor
+    - asistir a un taller
+    - ir al gimnasio
+    - reunirse con amigos
+    - asistir a un seminario
+    - unirse a un webinar
+    - ir de compras
+    - ver una película
+    - asistir a clase
+    - ir a una fiesta
+    - visitar a la familia
+    - asistir a un entrenamiento
+    - ir al dentista
+    - asistir a un concierto
+    - unirse a un club de lectura
+    - ir de excursión
+    - asistir a un evento de networking
+    - visitar un museo
+    - ir a la playa
+    - asistir a una boda
+    - unirse a una clase de yoga
+    - ir a un festival
+    - asistir a una conferencia
+    - ir a un evento deportivo
+    - visitar un parque
+    - asistir a una clase de cocina
+    - ir a una clase de baile
+
+- intent: inform_time
+  examples: |
+    - 25/09/2025 10:00
+    - 01/01/2025 09:00
+    - 15/02/2025 14:30
+    - 10/03/2025 08:15
+    - 22/04/2025 16:45
+    - 05/05/2025 12:00
+    - 18/06/2025 11:30
+    - 30/07/2025 17:00
+    - 12/08/2025 10:00
+    - 25/09/2025 13:00
+    - 07/10/2025 15:30
+    - 19/11/2025 09:45
+    - 31/12/2025 18:00
+
+- intent: get_news
+  examples: |
+    - Obtener noticias
+    - ¿Cuáles son las noticias?
+    - Mostrar noticias
+    - Listar noticias
+    - Noticias recientes
+    - Últimas noticias
+    - Dime las noticias
+    - ¿Qué está pasando?
+    - Muestra las noticias
+
+- intent: get_weather
+  examples: |
+    - ¿Cuál es el clima en [Londres](city)?
+    - Dime el clima en [Nueva York](city)
+    - ¿Cuál es la temperatura en [París](city)?
+    - Clima en [Tokio](city)
+    - ¿Cómo está el clima en [Berlín](city)?
+    - ¿Cuál es el clima en [Londres](city)?
+    - ¿Qué tiempo hace en [Madrid](city)?
+    - ¿Cómo está el clima en [Barcelona](city)?
+    - Dime la temperatura en [Roma](city)
+    - ¿Cuál es la previsión del tiempo en [Lisboa](city)?
+    - ¿Qué clima hace en [Buenos Aires](city)?
+    - ¿Cómo está el tiempo en [Santiago](city)?
+    - ¿Cuál es el pronóstico del clima en [Lima](city)?
+    - ¿Qué tiempo hace en [Bogotá](city)?
+    - ¿Cómo está el clima en [Ciudad de México](city)?
+    - Dime el clima en [Caracas](city)
+
+- intent: ask_gemini
+  examples: |
+    - Pregunta a Gemini: ¿Cuál es la capital de Francia?
+    - Pregunta a Gemini: ¿Quién escribió "Cien años de soledad"?
+    - Pregunta a Gemini: ¿Cómo se dice "hola" en japonés?
+    - Pregunta a Gemini: ¿Qué es la inteligencia artificial?
+    - Pregunta a Gemini: ¿Cuáles son los beneficios de la meditación?
+    - Pregunta a Gemini: ¿Cómo puedo aprender a programar?
+    - Pregunta a Gemini: ¿Qué es el aprendizaje automático?
+    - Pregunta a Gemini: ¿Cuál es la receta para hacer una paella?
+    - Pregunta a Gemini: ¿Qué significa la teoría de la relatividad?
+    - Pregunta a Gemini: ¿Cuáles son las últimas noticias en tecnología?
+    - Pregunta a Gemini: ¿Qué es el cambio climático?
+    - Pregunta a Gemini: ¿Cómo funciona el blockchain?
+    - Pregunta a Gemini: ¿Qué es el metaverso?
+    - Pregunta a Gemini: ¿Cuáles son los síntomas del COVID-19?
+    - Pregunta a Gemini: ¿Qué es la computación cuántica?
+    - Pregunta a Gemini: ¿Cómo puedo mejorar mi productividad?
+    - Pregunta a Gemini: ¿Qué es la economía circular?
+    - Pregunta a Gemini: ¿Cuáles son las mejores prácticas para el trabajo remoto?
+    - Pregunta a Gemini: ¿Qué es la energía renovable?
+    - Pregunta a Gemini: ¿Cómo puedo aprender un nuevo idioma rápidamente?
+
+- intent: generate_image
+  examples: |
+    - Generar imagen: un caballo en un prado
+    - Generar imagen: un gato en una silla
+    - Generar imagen: un perro en la playa
+    - Generar imagen: un árbol en un bosque
+    - Generar imagen: un coche en la carretera
+    - Generar imagen: una casa en la montaña
+    - Generar imagen: un barco en el mar
+    - Generar imagen: un avión en el cielo
+    - Generar imagen: una bicicleta en el parque
+    - Generar imagen: una flor en un jardín
+    - Generar imagen: un río en el campo
+    - Generar imagen: una montaña en el desierto
+    - Generar imagen: un puente sobre un río
+    - Generar imagen: un tren en las vías
+    - Generar imagen: un lago en el valle
+    - Generar imagen: un edificio en la ciudad
+    - Generar imagen: una nube en el cielo
+    - Generar imagen: un sol en la playa
+    - Generar imagen: una luna en la noche
+    - Generar imagen: una estrella en el espacio
+    - Generar imagen: un planeta en el universo
+    - Generar imagen: un cohete en la luna
+    - Generar imagen: un astronauta en el espacio
+    - Generar imagen: un extraterrestre en Marte
+    - Generar imagen: un robot en la fábrica
+    - Generar imagen: un androide en la ciudad
+    - Generar imagen: un dron en el campo
+    - Generar imagen: un helicóptero en la montaña
+    - Generar imagen: un submarino en el océano

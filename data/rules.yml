@@ -1,0 +1,80 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Answer the user with bot capabilities
+  steps:
+  - intent: ask_capabilities
+  - action: utter_bot_capabilities
+
+- rule: Get upcoming events
+  steps:
+  - intent: get_events
+  - action: action_get_events
+
+- rule: Add new event, activate event form
+  steps:
+  - intent: add_event
+  - action: event_form
+  - active_loop: event_form
+
+- rule: Submit event form and create event
+  condition:
+  - active_loop: event_form
+  steps:
+  - action: event_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_create_event
+
+- rule: Get weather, activate city form
+  steps:
+  - intent: get_weather
+  - action: city_form
+  - active_loop: city_form
+
+- rule: Submit city form and get weather
+  condition:
+  - active_loop: city_form
+  steps:
+  - action: city_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_weather
+
+- rule: Get news
+  steps:
+  - intent: get_news
+  - action: action_get_news
+
+- rule: Ask question to Gemini
+  steps:
+  - intent: ask_gemini
+  - action: action_ask_gemini
+
+- rule: Ask the user to rephrase in case of low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: Generate image
+  steps:
+  - intent: generate_image
+  - action: action_generate_image

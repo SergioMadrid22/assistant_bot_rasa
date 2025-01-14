@@ -1,0 +1,90 @@
+version: '3.1'
+intents:
+- bot_challenge
+- goodbye
+- greet
+- add_event
+- get_events
+- inform_event
+- inform_time
+- get_news
+- get_weather
+- ask_capabilities
+- ask_gemini
+- generate_image
+
+entities:
+- event
+- time
+- city
+
+slots:
+  event:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: event_form
+        requested_slot: event
+  time:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: event_form
+        requested_slot: time
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+      intent: get_weather
+
+forms:
+  event_form:
+    required_slots:
+    - event
+    - time
+  city_form:
+    required_slots:
+    - city
+
+actions: 
+  - action_create_event
+  - action_get_events
+  - action_get_news
+  - action_get_weather
+  - action_ask_chatgpt
+  - action_ask_gemini
+  - action_generate_image
+
+responses:
+  utter_greet:
+  - text: ¡Hola! ¿En qué puedo ayudarte?
+  utter_goodbye:
+  - text: Adiós
+  - text: ¡Hasta luego!
+  - text: ¡Nos vemos!
+  utter_iamabot:
+  - text: Soy un bot, impulsado por Rasa.
+  utter_ask_event_form_event:
+  - text: Escribe un título para tu evento
+  - text: ¿Cuál es el título de tu evento?
+  - text: ¿Cómo debería llamar a tu evento?
+  - text: ¿Cómo quieres llamar a tu evento?
+  utter_ask_event_form_time:
+  - text: ¿A qué hora? [d/m/a H:M] (ej. 08/01/2025 12:00)
+  - text: ¿Cuándo es el evento? [dd/mm/yyyy HH:MM] (ej. 08/01/2025 12:00)
+  utter_bot_capabilities:
+  - text: Puedo ayudarte a crear eventos y obtener información sobre el clima y las noticias.
+  utter_ask_city_form_city:
+  - text: ¿De qué ciudad te gustaría saber el clima?
+  utter_please_rephrase:
+  - text: No te he entendido bien. ¿Podrías reformular tu mensaje?
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+config:
+  store_entities_as_slots: false
