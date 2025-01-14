@@ -44,14 +44,9 @@ nlu:
     - ¿Qué sabes hacer?
     - ¿Qué funciones tienes?
     - ¿Qué tareas puedes realizar?
-    - ¿Qué puedes realizar?
     - ¿Qué puedes hacer por mí?
     - ¿Qué puedes hacer para ayudarme?
     - ¿Qué puedes hacer para asistirme?
-    - ¿Qué puedes hacer para apoyarme?
-    - ¿Qué puedes hacer para colaborar conmigo?
-    - ¿Qué puedes hacer para cooperar conmigo?
-    - ¿Qué puedes hacer para trabajar conmigo
 
 - intent: add_event
   examples: |
